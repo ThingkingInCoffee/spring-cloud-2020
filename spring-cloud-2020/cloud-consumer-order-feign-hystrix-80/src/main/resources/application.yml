@@ -1,0 +1,14 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: true  #注册到注册中心
+    fetch-registry: true  #拉取服务列表
+    service-url:
+      defaultZone: http://win.eureka7001.com:7001/eureka, http://win.eureka7002.com:7002/eureka
+#      defaultZone: http://localhost:7001/eureka
+
+feign:
+  hystrix:
+    enabled: true    #客户端开启 fallback 降级 默认是false  同时主类添加 @EnableHystrix
