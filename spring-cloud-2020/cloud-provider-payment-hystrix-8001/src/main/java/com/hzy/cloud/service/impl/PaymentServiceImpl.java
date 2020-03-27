@@ -33,7 +33,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     @HystrixCommand(fallbackMethod = "breakerHandler", commandProperties = {
-            @HystrixProperty(name = "circuitBreaker.enable", value = ""),  //是否开启断路器
+            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),  //是否开启断路器
             @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),  //请求次数
             @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),  //窗口期
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")  //失败率

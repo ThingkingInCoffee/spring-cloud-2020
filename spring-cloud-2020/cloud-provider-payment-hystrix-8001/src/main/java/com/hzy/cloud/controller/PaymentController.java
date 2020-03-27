@@ -32,4 +32,10 @@ public class PaymentController {
         return "==========handler===========";
     }
 
+    //服务熔断
+    @GetMapping(value = "/payment/breaker/{id}")
+    public String paymentInfo(@PathVariable Integer id) {
+        return paymentService.paymentInfoBreaker(id);
+    }
+
 }

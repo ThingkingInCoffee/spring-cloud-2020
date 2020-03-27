@@ -12,5 +12,3 @@ eureka:
 spring:
   application:
     name: cloud-payment-hystrix-service
-
-
