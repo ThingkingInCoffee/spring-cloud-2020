@@ -1,0 +1,23 @@
+server:
+  port: 9000
+
+eureka:
+  instance:
+    prefer-ip-address: true  #显示 IP 地址
+    instance-id: file-upload-9000  #注册中心显示的主机名
+  client:
+    register-with-eureka: true  #注册到注册中心
+    fetch-registry: true  #拉取服务列表
+    service-url:
+#      defaultZone: http://win.eureka7001.com:7001/eureka, http://win.eureka7002.com:7002/eureka
+      defaultZone: http://localhost:7001/eureka
+
+
+spring:
+  application:
+    name: cloud-file-upload-service
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+

@@ -1,0 +1,30 @@
+server:
+  port: 9002
+
+eureka:
+  instance:
+    prefer-ip-address: true  #显示 IP 地址
+    instance-id: feign-form-9002  #注册中心显示的主机名
+  client:
+    register-with-eureka: true  #注册到注册中心
+    fetch-registry: true  #拉取服务列表
+    service-url:
+#      defaultZone: http://win.eureka7001.com:7001/eureka, http://win.eureka7002.com:7002/eureka
+      defaultZone: http://localhost:7001/eureka
+
+spring:
+  application:
+    name: cloud-feign-form-service
+  servlet:
+    multipart:
+      max-file-size: 1024MB  # 默认1MB
+      max-request-size: 1024MB  #默认10MB
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 6000
+        readTimeout: 6000
+  httpclient:
+    connection-timeout: 6000  #默认2000
